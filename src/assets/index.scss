@@ -20,13 +20,24 @@ body {
   justify-content: space-between;
   margin: 40px;
   padding: 40px;
-  min-width: 300px;
 }
 
 button {
   border: none;
 }
 
-.plusBtn {
-  width: 40px;
+.plusBtn > img {
+  cursor: pointer;
+}
+
+.color {
+  margin: 10px;
+  border: 1px solid #34355B;
+  border-radius: 12px;
+  padding: 6px 12px;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-between;
 }

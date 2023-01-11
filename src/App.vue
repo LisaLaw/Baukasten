@@ -4,11 +4,10 @@ import logo from "@/assets/icons/logo.svg";
 import EntryForm from "@/components/EntryForm.vue";
 import Card from "@/components/Card.vue";
 
-const persons = ref([]);
+const persons = ref(["lisa"]);
 
 const addPerson = (newPerson) => {
   persons.value.push(newPerson);
-  console.log("array", persons);
 };
 </script>
 

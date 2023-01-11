@@ -1,0 +1,32 @@
+body {
+  background-color: lightgrey;
+}
+
+.wrapper {
+  background-color: #34355B;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  height: 90vH;
+}
+
+.card {
+  background-color: lightgray;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 40px;
+  padding: 40px;
+  min-width: 300px;
+}
+
+button {
+  border: none;
+}
+
+.plusBtn {
+  width: 40px;
+}

@@ -1,0 +1,20 @@
+{
+  "colors": [
+    {
+      "name": "Gelb",
+      "value": "#fffb9b"
+    },
+    {
+      "name": "Blau",
+      "value": "#a1d7f4"
+    },
+    {
+      "name": "Grün",
+      "value": "#59edc1"
+    },
+    {
+      "name": "Orange",
+      "value": "#ffc898"
+    }
+  ]
+}

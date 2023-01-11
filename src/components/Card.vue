@@ -21,9 +21,7 @@ onMounted(() => {
 });
 
 const onAddColor = (color) => {
-  console.log(color);
-  chosenColors.value.push(color);
-  console.log(chosenColors);
+  chosenColors.value.push({ name: color.name, value: color.value });
 };
 </script>
 

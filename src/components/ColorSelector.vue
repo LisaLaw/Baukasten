@@ -4,8 +4,8 @@ import { ref, onMounted } from "vue";
 const props = defineProps({
   oldColor: {
     type: Object,
-  }
-})
+  },
+});
 
 const emit = defineEmits("color-selected");
 
@@ -27,7 +27,6 @@ const onSelect = () => emit("color-selected", newColor, props.oldColor);
       v-for="(color, index) in availableColors"
       :key="index"
       :value="color"
-      :selected="color === newColor"
     >
       {{ color.name }}
     </option>

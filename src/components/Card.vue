@@ -3,6 +3,7 @@
 import { ref } from "vue";
 import Color from "@/components/Color.vue";
 import ColorSelector from "./ColorSelector.vue";
+import plus from "@/assets/icons/user-plus.svg";
 
 const props = defineProps({
   name: {
@@ -53,7 +54,10 @@ const changeColor = (selected, oldColor) => {
     <ColorSelector
       @color-selected="addColor"
       class="topSelector"
-    ></ColorSelector>
+      :selector-image="true"
+    >
+    </ColorSelector>
+    <img :src="plus" class="selectorImg" />
     <div v-for="(color, index) in chosenColors" :key="index">
       <Color
         v-if="!color.isInputVisible"
@@ -71,14 +75,3 @@ const changeColor = (selected, oldColor) => {
     <h2>{{ props.name }}</h2>
   </div>
 </template>
-
-<style scoped>
-.topSelector {
-  all: unset;
-  background-image: url(../assets/icons/user-plus.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 30px;
-}
-</style>

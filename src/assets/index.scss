@@ -31,13 +31,28 @@ button > img {
 }
 
 .color {
-  margin: 10px;
+  margin: 6px;
   border: 1px solid #34355B;
   border-radius: 12px;
-  padding: 6px 12px;
+  width: 200px;
   display: flex;
   flex-direction: row;
-  flex-grow: 1;
   align-items: center;
   justify-content: space-between;
+  padding: 0 10px;
+}
+
+select {
+  all: unset;
+}
+
+.topSelector {
+  z-index: 0;
+  height: 40px;
+  color: lightgray;
+  width: 30px;
+}
+
+.selectorImg {
+  margin-top: -25px;
 }

@@ -23,10 +23,10 @@ body {
 }
 
 button {
-  border: none;
+  all: unset;
 }
 
-.plusBtn > img {
+button > img {
   cursor: pointer;
 }
 

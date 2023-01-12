@@ -11,15 +11,23 @@ const props = defineProps({
   },
 });
 
+const emit = defineEmits("color-deleted", "color-edited");
+
 const newColor = computed(() => props.color);
+
+const onDelete = () => emit("color-deleted", newColor.value.value);
 </script>
 
-<template>
+<template v-if="newColor.length">
   <div class="color" :style="{ backgroundColor: newColor.value }">
     <p>{{ newColor.name }}</p>
     <div>
-      <img :src="edit" />
-      <img :src="deleteImg" />
+      <button type="button">
+        <img :src="edit" />
+      </button>
+      <button type="button" @click="onDelete">
+        <img :src="deleteImg" />
+      </button>
     </div>
   </div>
 </template>

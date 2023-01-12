@@ -1,7 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
 import { ref, onMounted } from "vue";
-import plus from "@/assets/icons/user-plus.svg";
 import Color from "@/components/Color.vue";
 
 const props = defineProps({
@@ -12,6 +11,7 @@ const props = defineProps({
 });
 
 const availableColors = ref([]);
+const newColor = ref();
 const chosenColors = ref([]);
 
 onMounted(() => {
@@ -20,30 +20,46 @@ onMounted(() => {
     .then((data) => (availableColors.value = data));
 });
 
-const onAddColor = (color) => {
-  chosenColors.value.push({ name: color.name, value: color.value });
+const onAddColor = () => {
+  chosenColors.value.push(newColor.value);
+};
+
+const deleteColor = (index) => {
+  const colorToDelete = chosenColors.value[index];
+  console.log(colorToDelete);
+  chosenColors.value = chosenColors.value.splice(
+    colorToDelete,
+    chosenColors.value.length - 1
+  );
 };
 </script>
 
 <template>
   <div class="card">
-    <img :src="plus" />
-    <select
-      id="colorSelector"
-      v-model="chosenColors.value"
-      @change="onAddColor(chosenColors)"
-    >
+    <select v-model="newColor" @change="onAddColor">
       <option
         v-for="(color, index) in availableColors"
         :key="index"
         :value="color"
+        :selected="color === newColor"
       >
         {{ color.name }}
       </option>
     </select>
     <div v-for="(color, index) in chosenColors" :key="index">
-      <Color :color="color.value"></Color>
+      <Color :color="color" @color-deleted="deleteColor(index)"></Color>
     </div>
     <h2>{{ props.name }}</h2>
   </div>
 </template>
+
+<style scoped>
+select {
+  all: unset;
+  background-image: url(../assets/icons/user-plus.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 30px;
+}
+</style>

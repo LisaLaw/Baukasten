@@ -16,10 +16,14 @@ body {
   border-radius: 15px;
   display: flex;
   flex-direction: column;
+  padding: 10px 20px;
   align-items: center;
-  justify-content: space-between;
+}
+
+.outer {
+  padding: 0 0 20px;
   margin: 40px;
-  padding: 40px;
+  justify-content: space-between;
 }
 
 button {

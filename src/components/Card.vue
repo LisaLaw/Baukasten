@@ -12,16 +12,7 @@ const props = defineProps({
   },
 });
 
-const chosenColors = ref([
-  {
-    name: "Gelb",
-    value: "#fffb9b",
-  },
-  {
-    name: "Blau",
-    value: "#a1d7f4",
-  },
-]);
+const chosenColors = ref([]);
 
 const selectedColor = ref();
 

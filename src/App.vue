@@ -5,7 +5,7 @@ import deleteImg from "@/assets/icons/delete.svg";
 import EntryForm from "@/components/EntryForm.vue";
 import Card from "@/components/Card.vue";
 
-const persons = ref(["lisa"]);
+const persons = ref([]);
 const isActive = ref(false);
 
 const addPerson = (newPerson) => {
@@ -14,6 +14,9 @@ const addPerson = (newPerson) => {
   }
   if (!persons.value.includes(newPerson) && newPerson !== "") {
     persons.value.push(newPerson);
+    /* const index = persons.value.findIndex((person) => person === newPerson);
+    window.localStorage.setItem(JSON.stringify(index), newPerson);
+    console.log(window.localStorage.getItem(index)); */
   } else {
     isActive.value = true;
   }

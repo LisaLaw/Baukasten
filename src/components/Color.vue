@@ -10,13 +10,13 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits("color-deleted", "color-edited");
+const emit = defineEmits(["color-deleted", "color-edited"]);
 
 const onDelete = () => emit("color-deleted");
 const onEdit = () => emit("color-edited", props.color);
 </script>
 
-<template v-if="props.color.length">
+<template>
   <div
     v-if="!color.isInputVisible"
     class="color"

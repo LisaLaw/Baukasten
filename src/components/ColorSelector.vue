@@ -7,7 +7,7 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits("color-selected");
+const emit = defineEmits(["color-selected"]);
 
 const availableColors = ref([]);
 const newColor = ref();

@@ -3,7 +3,7 @@ import { ref } from "vue";
 
 const newName = ref("");
 
-const emit = defineEmits("person-submitted");
+const emit = defineEmits(["person-submitted"]);
 
 const onSubmit = () => {
   emit("person-submitted", newName.value);

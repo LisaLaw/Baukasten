@@ -14,9 +14,9 @@ const addPerson = (newPerson) => {
   }
   if (!persons.value.includes(newPerson) && newPerson !== "") {
     persons.value.push(newPerson);
-    /* const index = persons.value.findIndex((person) => person === newPerson);
+    const index = persons.value.findIndex((person) => person === newPerson);
     window.localStorage.setItem(JSON.stringify(index), newPerson);
-    console.log(window.localStorage.getItem(index)); */
+    console.log(window.localStorage.getItem(index));
   } else {
     isActive.value = true;
   }

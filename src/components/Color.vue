@@ -1,6 +1,5 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
-import { ref } from "vue";
 import edit from "@/assets/icons/edit.svg";
 import deleteImg from "@/assets/icons/delete.svg";
 
@@ -13,21 +12,19 @@ const props = defineProps({
 
 const emit = defineEmits("color-deleted", "color-edited");
 
-const newColor = ref(props.color);
-
-const onDelete = () => emit("color-deleted", newColor);
-const onEdit = () => emit("color-edited", newColor);
+const onDelete = () => emit("color-deleted");
+const onEdit = () => emit("color-edited", props.color);
 </script>
 
-<template v-if="newColor.length">
+<template v-if="props.color.length">
   <div
     v-if="!color.isInputVisible"
     class="color"
     :style="{
-      backgroundColor: newColor.value,
+      backgroundColor: props.color.value,
     }"
   >
-    <p>{{ newColor.name }}</p>
+    <p>{{ props.color.name }}</p>
     <div>
       <button type="button" @click="onEdit">
         <img :src="edit" />

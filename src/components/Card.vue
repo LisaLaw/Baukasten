@@ -29,9 +29,8 @@ const addColor = (newColor) => {
   chosenColors.value = [...chosenColors.value, newColor.value];
 };
 
-const deleteColor = (color) => {
-  chosenColors.value = chosenColors.value.filter((c) => c !== color);
-  console.log(chosenColors.value);
+const deleteColor = (index) => {
+  chosenColors.value.splice(index, 1);
 };
 
 const editColor = (colorToEdit) => {
@@ -59,8 +58,9 @@ const changeColor = (selected, oldColor) => {
       <Color
         v-if="!color.isInputVisible"
         :color="color"
-        @color-deleted="deleteColor(color)"
+        @color-deleted="deleteColor(index)"
         @color-edited="editColor(color)"
+        :index="index"
       ></Color>
       <div v-else>
         <ColorSelector
